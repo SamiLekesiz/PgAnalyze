@@ -5,21 +5,21 @@ Kurulum
 1. Postgres Kullanıcısı Oluşturma ve Erişim Haklarının Sağlanması
 
 İstatistik tablolarına tam olarak erişebilmek için aşağıdaki sorguları Postgres süper kullanıcısı olarak çalıştırmanın önemli olduğunu unutmayın.
-
+```
 CREATE USER pganalyze WITH PASSWORD ‘mypassword’ CONNECTION LIMIT 5;GRANT pg_monitor TO pganalyze;CREATE SCHEMA pganalyze;
 GRANT USAGE ON SCHEMA pganalyze TO pganalyze;
 REVOKE ALL ON SCHEMA public FROM pganalyze;CREATE OR REPLACE FUNCTION pganalyze.get_stat_replication() RETURNS SETOF pg_stat_replication AS
 $$
  /* pganalyze-collector */ SELECT * FROM pg_catalog.pg_stat_replication;
 $$ LANGUAGE sql VOLATILE SECURITY DEFINER;
-
+```
 postgres user ile aşağıdaki komutu çalıştırıp db’e bağlanalım ve oluşturduğumuz kullanıcının erişimin gerçekleştiğini kontrol edelim.
-
+```
 postgres@debian:~$ PGPASSWORD=aYuk71bSj1 psql -h localhost -d kasa -U pganalyze
 psql (11.5 (Debian 11.5–1+deb10u1))
 SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, bits: 256, compression: off)
 Type “help” for help.
-
+```
 2. PostgreSQL Konfigürasyonlarını Yapılandırma
 
 Bu aşamada postgres istatistiklerini tutan pg_stat_statement ayarlamaları yapacağız.
