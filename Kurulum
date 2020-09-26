@@ -1,5 +1,7 @@
 Gereksinimler
 
+Not: Bu yazı https://pganalyze.com/docs adresindeki pganalyze resmi dökümanından derlenmiştir.
+
 Collector, PgAnalyze servislerine her 10 dakikada bir normalize edilmiş veri ve diğer istatistikleri gönderir. Desteklenen minimum PostgreSQL sürümü 9.2'dir.
 Kurulum
 1. Postgres Kullanıcısı Oluşturma ve Erişim Haklarının Sağlanması
@@ -151,4 +153,4 @@ Successfully reloaded pganalyze collector (PID 11249)
 
 Test başarılı oldu, her şey tamam. Veritabanımızı artık daha konforlu bir şekilde izleyebiliriz.
 
-Bu yazı https://pganalyze.com/docs adresindeki pganalyze resmi dökümanından derlenmiştir.
+
