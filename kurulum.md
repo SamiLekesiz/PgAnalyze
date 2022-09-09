@@ -32,7 +32,7 @@ Postgresin koştuğu OS seçip devam edelim.
 
 Aşağıdaki paketin yüklü olduğundan emin olalım,
 
-Dikkat ! Yüklü versiyonunuz farklı ise dikkat! Kopyala yapıştır derseniz yeni bir postgresql cluster’nız olur :)
+* Dikkat ! Yüklü versiyonunuz farklı ise dikkat! Kopyala yapıştır derseniz yeni bir postgresql cluster’nız olur :)
 
 `sudo apt-get install postgresql-contrib-11`
 
