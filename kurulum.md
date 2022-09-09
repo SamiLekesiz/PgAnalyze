@@ -4,7 +4,7 @@ Not: Bu yazı https://pganalyze.com/docs adresindeki pganalyze resmi dökümanı
 
 Collector, PgAnalyze servislerine her 10 dakikada bir normalize edilmiş veri ve diğer istatistikleri gönderir. Desteklenen minimum PostgreSQL sürümü 9.2'dir.
 Kurulum
-1. Postgres Kullanıcısı Oluşturma ve Erişim Haklarının Sağlanması
+## Postgres Kullanıcısı Oluşturma ve Erişim Haklarının Sağlanması
 
 İstatistik tablolarına tam olarak erişebilmek için aşağıdaki sorguları Postgres süper kullanıcısı olarak çalıştırmanın önemli olduğunu unutmayın.
 ```
@@ -22,7 +22,7 @@ psql (11.5 (Debian 11.5–1+deb10u1))
 SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, bits: 256, compression: off)
 Type “help” for help.
 ```
-2. PostgreSQL Konfigürasyonlarını Yapılandırma
+## PostgreSQL Konfigürasyonlarını Yapılandırma
 
 Bu aşamada postgres istatistiklerini tutan pg_stat_statement ayarlamaları yapacağız.
 
@@ -63,7 +63,8 @@ CREATE EXTENSIONpostgres=# SELECT calls, query FROM pg_stat_statements LIMIT 1;
 Tamamdır çalışıyor.
 
 Eğer bir hata alıyorsan sunucuyu başlatmayı unutmuş olman muhtemeldir.
-3. PgAnalyze Collector Yükleme
+
+## PgAnalyze Collector Yükleme
 
 Bu adımda, pganalyze’e istatistik bilgileri gönderen toplayıcıyı yükleyeceğiz.
 
@@ -95,7 +96,7 @@ Update işleminden sonra yüklemeye hazırız.
 sudo apt-get update
 sudo apt-get install pganalyze-collector
 
-4. PgAnalyze Konfigürasyon Dosyasını Yapılandırma
+## PgAnalyze Konfigürasyon Dosyasını Yapılandırma
 
 İstatistik toplayıcının konfigürasyon dosyası şu dizinde;
 
