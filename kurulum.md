@@ -32,10 +32,11 @@ Aşağıdaki paketin yüklü olduğundan emin olalım,
 
 Dikkat ! Yüklü versiyonunuz farklı ise dikkat! Kopyala yapıştır derseniz yeni bir postgresql cluster’nız olur :)
 
-sudo apt-get install postgresql-contrib-11
+`sudo apt-get install postgresql-contrib-11`
 
 pg_stat_statement extension aktif etmek için superuser ile sorguyu çalıştıralım,
 
+```
 postgres=# SHOW shared_preload_libraries;
 -[ RECORD 1 ] — — — — — — + — — — — — — — — — -
 shared_preload_libraries | pg_stat_statementspostgres=# \dx;List of installed extensions
@@ -46,20 +47,21 @@ shared_preload_libraries | pg_stat_statementspostgres=# \dx;List of installed ex
 (2 rows)
 postgres=# ALTER SYSTEM SET shared_preload_libraries = ‘pg_stat_statements’;
 ALTER SYSTEM
-
+```
 Daha önce pg_stat_statements kullanmadıysanız, ilk defa etkinleştirmek için Postgresi yeniden başlatmaya ihtiyacınız olacak;
 
-sudo service postgresql restart
+`sudo service postgresql restart`
 
 Pg_stat_statements öğesinin veri döndürdüğünü doğrulayalım,
 
+```
 postgres=# CREATE EXTENSION IF NOT EXISTS pg_stat_statements;
 CREATE EXTENSIONpostgres=# SELECT calls, query FROM pg_stat_statements LIMIT 1;
  calls | query
  — — — -+ — — — — — — — — — — — — — — — — — — — — — — — — — -
  1 | CREATE EXTENSION IF NOT EXISTS pg_stat_statements
 (1 row)
-
+```
 Tamamdır çalışıyor.
 
 Eğer bir hata alıyorsan sunucuyu başlatmayı unutmuş olman muhtemeldir.
