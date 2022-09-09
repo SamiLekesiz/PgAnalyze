@@ -36,7 +36,7 @@ Dikkat ! Yüklü versiyonunuz farklı ise dikkat! Kopyala yapıştır derseniz y
 
 `sudo apt-get install postgresql-contrib-11`
 
-pg_stat_statement extension aktif etmek için superuser ile sorguyu çalıştıralım,
+`pg_stat_statement` extension aktif etmek için superuser ile sorguyu çalıştıralım,
 
 ```
 postgres=# SHOW shared_preload_libraries;
