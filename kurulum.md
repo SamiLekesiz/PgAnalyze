@@ -109,7 +109,7 @@ sudo apt-get install pganalyze-collector
 Dosya içeriği aşağıdaki gibi, burada ki parametreleri adım adım dolduralım.
 ```
 [pganalyze]
-api_key: YAL3B2XJDTM2H4X7 #pganalyze trial ve satın almada veriyor[server1]
+api_key: YAL3BDTM22XJH4X7 #pganalyze trial ve satın almada veriyor[server1]
 db_name: postgres, kasa ** #buraya yazdığın DB’e,pganalyze kullanıcısına — erişim vermeyi unutma
    #GRANT CONNECT ON DATABASE kasa TO pganalyze;
 db_username: pganalyze #1.adımda oluşturulan parola ve kullaıcı adı 
