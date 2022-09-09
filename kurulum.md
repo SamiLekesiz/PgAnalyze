@@ -8,9 +8,11 @@ Kurulum
 
 İstatistik tablolarına tam olarak erişebilmek için aşağıdaki sorguları Postgres süper kullanıcısı olarak çalıştırmanın önemli olduğunu unutmayın.
 ```
-CREATE USER pganalyze WITH PASSWORD ‘mypassword’ CONNECTION LIMIT 5;GRANT pg_monitor TO pganalyze;CREATE SCHEMA pganalyze;
+CREATE USER pganalyze WITH PASSWORD ‘mypassword’ CONNECTION LIMIT 5;
+GRANT pg_monitor TO pganalyze;CREATE SCHEMA pganalyze;
 GRANT USAGE ON SCHEMA pganalyze TO pganalyze;
-REVOKE ALL ON SCHEMA public FROM pganalyze;CREATE OR REPLACE FUNCTION pganalyze.get_stat_replication() RETURNS SETOF pg_stat_replication AS
+REVOKE ALL ON SCHEMA public FROM pganalyze;
+CREATE OR REPLACE FUNCTION pganalyze.get_stat_replication() RETURNS SETOF pg_stat_replication AS
 $$
  /* pganalyze-collector */ SELECT * FROM pg_catalog.pg_stat_replication;
 $$ LANGUAGE sql VOLATILE SECURITY DEFINER;
